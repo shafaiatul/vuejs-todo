@@ -7,4 +7,22 @@ body {
         font-family: 'Open Sans', sans-serif;
         background: #fff!important;
     }
+
+    .margin-right {
+        margin-right: 10px;
+    }
+
+    .add-tasks-list {
+        .panel-body {
+            p {
+                font-size: 15px;
+            }
+        }
+        .panel-footer {
+            button.btn {
+                border-radius: 50px;
+            }
+        }
+    }
+
 }

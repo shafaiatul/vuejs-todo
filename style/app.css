@@ -4,5 +4,11 @@ body {
   body nav {
     font-family: 'Open Sans', sans-serif;
     background: #fff !important; }
+  body .margin-right {
+    margin-right: 10px; }
+  body .add-tasks-list .panel-body p {
+    font-size: 15px; }
+  body .add-tasks-list .panel-footer button.btn {
+    border-radius: 50px; }
 
 /*# sourceMappingURL=app.css.map */

@@ -16,10 +16,10 @@
           </div>
         </nav>
         <!-- Main body of the App -->
-        <div class="container" id="events">
+        <div class="container" id="tasks">
             <!-- add a Task form -->
             <div class="col-sm-6">
-                <div class="panel panel-default">
+                <div class="panel panel-default add-tasks-panel" >
                     <div class="panel-heading">
                         <h3>Add a Task</h3>
                     </div>
@@ -36,19 +36,40 @@
                             <input type="date" class="form-control" placeholder="Date" v-model="task.date">
                         </div>
 
-                        <button class="btn btn-primary" v-on="click: addTask">Submit</button>
+                        <button class="btn btn-primary" v-on:click="addTask">Submit</button>
+
                     </div>
 
                 </div>
             </div>
             <!-- show the Tasks -->
             <div class="col-sm-6">
-                <div class="list-group">
-                    <a href="#" class="list-group-item">
-                        <h4 class="list-group-item-heading">List group item heading</h4>
-                        <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-                    </a>
+
+                <div class="panel panel-default add-tasks-list" v-for="task in tasks">
+                    <div class="panel-heading">
+                        <h2 class="panel-title">
+                            <i class="glyphicon glyphicon-tag"></i>
+                            <span class="margin-right"></span>
+                            {{task.name}}
+                        </h2>
+                    </div>
+                    <div class="panel-body">
+                        <h4>
+                            <i class="glyphicon glyphicon-calendar" v-if="task.date"></i>
+                            <span class="margin-right"></span>
+                            {{task.date}}
+                        </h4>
+                        <p class="list-group-item-text" v-if="task.description">
+                            {{task.description}}
+                        </p>
+
+                        <hr>
+                    </div>
+                    <div class="panel-footer">
+                        <button class="btn btn-sm btn-danger" v-on:click="deleteTask(task)">Delete</button>
+                    </div>
                 </div>
+
             </div>
         </div>
 
