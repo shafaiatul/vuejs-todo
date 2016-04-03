@@ -24,7 +24,19 @@
                         <h3>Add a Task</h3>
                     </div>
                     <div class="panel-body">
+                        <div class="form-group">
+                            <input class="form-control" placeholder="Task Name" v-model="task.name">
+                        </div>
 
+                        <div class="form-group">
+                            <textarea class="form-control" placeholder="Task Description" v-model="task.description"></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="date" class="form-control" placeholder="Date" v-model="task.date">
+                        </div>
+
+                        <button class="btn btn-primary" v-on="click: addTask">Submit</button>
                     </div>
 
                 </div>
@@ -40,7 +52,7 @@
             </div>
         </div>
 
-        
+
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
         <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
         <!-- VueJS -->
